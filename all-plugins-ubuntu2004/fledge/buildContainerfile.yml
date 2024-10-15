@@ -9,70 +9,73 @@ fledge:
     notifversion: 2.5.0
 
 build_modules:
-  - module: 
+  - module:
       name: fledgepower-filter-tase2topivot_build.sh
       version: v1.0.0-RC2
-  - module: 
+  - module:
       name: fledge-south-tase2.sh
       version: v1.0.0-RC2
-  - module: 
+  - module:
       name: fledge-north-tase2.sh
       version: v1.0.0-RC1
-  - module: 
+  - module:
       name: libtase2-install.sh
       version: v1.0.0
-#   - module: 
+#   - module:
 #       name: fledge-south-iec61850.sh
 #       version: v1.0.0-RC3
-#   - module: 
+#   - module:
 #       name: lib61850-install.sh
 #       version: v1.0.0
-  - module: 
+  - module:
       name: fledgepower-filter-pivottoopcua_build.sh
       version: v1.0.0
-  - module: 
+  - module:
       name: fledge-north-opcua_build.sh
       version: v1.0.0
-  - module: 
+  - module:
       name: fledge-north-auditsnmp_build.sh
       version: v1.0.0
-  - module: 
+  - module:
       name: fledgepower-rule-systemsp_build.sh
       version: v1.0.0-RC1
-  - module: 
+  - module:
       name: fledgepower-notify-systemsp_build.sh
       version: v1.0.0-RC1
-  - module: 
+  - module:
       name: fledgepower-filter-mvscale_build.sh
       version: v1.0.0
-  - module: 
+  - module:
       name: fledgepower-filter-transientsp_build.sh
       version: v1.0.0
-  - module: 
+  - module:
       name: fledgepower-filter-hnztopivot_build.sh
       version: v1.0.0
-  - module: 
+  - module:
       name: fledgepower-filter-iec104topivot_build.sh
       version: v1.2.0
-  - module: 
+  - module:
       name: fledge-south-hnz_build.sh
       version: v2.1.1
-  - module: 
+  - module:
       name: libhnz-install.sh
       version: v1.0.0
-  - module: 
+  - module:
       name: fledge-south-iec104_build.sh
       version: v1.3.0
-  - module: 
+  - module:
       name: fledge-north-iec104_build.sh
       version: v1.2.2
-  - module: 
+  - module:
       name: lib60870-install.sh
       version: v1.0.0
-  - module: 
+  - module:
       name: fledgepower-filter-spoperators_build.sh
       version: v1.0.0
-      
+  - module:
+      name: fledge-install-modbustcp.sh
+      version: v1.0.0
+
 ports:
   - 1995
   - 2404
@@ -88,3 +91,4 @@ ports:
   - 8080
   - 8081
   - 8090
+  - 502

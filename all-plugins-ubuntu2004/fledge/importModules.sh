@@ -25,10 +25,12 @@ s1_south_service_name="hnzsouth_s1"
 s2_south_service_name="hnzsouth_s2"
 s3_south_service_name="iec104south_s1"
 s4_south_service_name="iec104south_s2"
+s5_south_service_name="modbustcpsouth_s1"
 s1_south_service_name_advanced="${s1_south_service_name}Advanced"
 s2_south_service_name_advanced="${s2_south_service_name}Advanced"
 s3_south_service_name_advanced="${s3_south_service_name}Advanced"
 s4_south_service_name_advanced="${s4_south_service_name}Advanced"
+s5_south_service_name_advanced="${s5_south_service_name}Advanced"
 
 n1_north_service_name="iec104north_c1"
 n2_north_service_name="iec104north_c2"
@@ -38,6 +40,9 @@ n5_north_service_name="iec104north_c5"
 n6_north_service_name="iec104north_c6"
 n7_north_service_name="iec104north_c7"
 n8_north_service_name="iec104north_c8"
+
+# TODO add north service for modbustcp if it nessesery
+
 n1_north_service_name_advanced="${n1_north_service_name}Advanced"
 n2_north_service_name_advanced="${n2_north_service_name}Advanced"
 n3_north_service_name_advanced="${n3_north_service_name}Advanced"
@@ -54,6 +59,7 @@ plugin_2="transientsp"
 plugin_3="hnz_pivot_filter"
 plugin_4="mvscale"
 plugin_5="spoperators"
+plugin_6="modbustcp"
 
 name_service_notif="notif"
 notif_plugin_1="systemspr"
@@ -73,6 +79,8 @@ curl -sX POST http://localhost:8081/fledge/service -d '{"name":"'$s1_south_servi
 curl -sX POST http://localhost:8081/fledge/service -d '{"name":"'$s2_south_service_name'","type":"south","plugin":"hnz","enabled":false}'
 curl -sX POST http://localhost:8081/fledge/service -d '{"name":"'$s3_south_service_name'","type":"south","plugin":"iec104","enabled":false}'
 curl -sX POST http://localhost:8081/fledge/service -d '{"name":"'$s4_south_service_name'","type":"south","plugin":"iec104","enabled":false}'
+curl -sX POST http://localhost:8081/fledge/service -d '{"name":"'$s5_south_service_name'","type":"south","plugin":"modbustcp","enabled":false}'
+
 
 # Create service north
 curl -sX POST http://localhost:8081/fledge/service -d '{"name":"'$n1_north_service_name'","type":"north","plugin":"iec104","enabled":false}'
@@ -94,6 +102,7 @@ curl -X POST http://localhost:8081/fledge/filter -d '{"name": "'$plugin_2'", "pl
 curl -X POST http://localhost:8081/fledge/filter -d '{"name": "'$plugin_3'", "plugin": "'$plugin_3'"}'
 curl -X POST http://localhost:8081/fledge/filter -d '{"name": "'$plugin_4'", "plugin": "'$plugin_4'"}'
 curl -X POST http://localhost:8081/fledge/filter -d '{"name": "'$plugin_5'", "plugin": "'$plugin_5'"}'
+curl -X POST http://localhost:8081/fledge/filter -d '{"name": "'$plugin_6'", "plugin": "'$plugin_6'"}'
 curl -X POST http://localhost:8081/fledge/filter -d '{"name": "'$ctrl_filter_1_sp'", "plugin": "'$plugin_1'"}'
 curl -X POST http://localhost:8081/fledge/filter -d '{"name": "'$ctrl_filter_1_pd'", "plugin": "'$plugin_3'"}'
 curl -X POST http://localhost:8081/fledge/filter -d '{"name": "'$ctrl_filter_2_sp'", "plugin": "'$plugin_1'"}'
